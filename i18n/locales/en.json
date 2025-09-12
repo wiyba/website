@@ -1,0 +1,24 @@
+{
+  "date": {
+    "yearLine": "{y}"
+  },
+  "about": {
+    "hello": "Hi! I'm",
+    "desc": "Hi! I'm 16 and {almost} a full-stack developer. I do frontend with Vue & Nuxt, backend with Python.",
+    "almost": "(almost)",
+    "contact": "Contact me",
+    "switchLang": "Switch language"
+  },
+  "projects": {
+    "allProjects": "View all projects",
+    "allProjectsSub": "Completed, in development, and frozen projects. All my projects are here"
+  },
+  "skills": {
+    "title": "Programming languages",
+    "titleSub": "Frameworks, plans, other skills, etc.",
+    "inUse": "In use",
+    "inProgress": "In progress",
+    "allSkills": "View all skills",
+    "allSkillsSub": "Lanuages, frameworks, utilities I'm working with and other cool stuff!"
+  }
+}

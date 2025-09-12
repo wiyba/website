@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body { background-color: #0a0a0a; color: white; }
+
+@layer components {
+  .smooth { @apply transition-all duration-200 ease-[cubic-bezier(.215,.61,.355,1)]; }
+  .icon { @apply inline-flex items-center justify-center shrink-0 align-middle mb-0.5; width:1em; height:1em; }
+
+  .card { @apply p-6 md:p-6 grid gap-3 items-start rounded-xl ring-2 bg-[#0b0b0b] ring-neutral-900/60 hover:shadow-xl smooth hover:scale-[101%]; }
+  .tile { @apply grid gap-4 items-center p-6 ring-2 w-full rounded-xl text-neutral-300 bg-[#0b0b0b] ring-neutral-900/60 hover:scale-[98%] active:scale-[96%] hover:opacity-90 active:opacity-80 hover:shadow-xl smooth; }
+  .chip { @apply flex gap-4 items-center px-3 py-1.5 ring-2 rounded-full bg-[#0b0b0b] ring-neutral-900/60; }
+  .btn  { @apply flex gap-4 items-center px-4 py-2 ring-2 rounded-xl text-neutral-300 bg-[#0b0b0b] ring-neutral-900/60 hover:scale-[98%] active:scale-[96%] smooth font-raleway; }
+  .skill-card { @apply grid gap-3 items-center p-[18px] ring-2 w-full rounded-xl text-neutral-300 bg-[#0e0e0e] ring-neutral-900/60 hover:scale-[102%] hover:shadow-xl hover:opacity-90 transition-all font-jbmono; }
+
+  .timeline { width: clamp(28ch, 32ch, 40ch); height: 3px; overflow: visible; }
+  .progress-rail { background-color: rgb(38 38 38 / 0.95); border-radius: 9999px; }
+  .progress-fill { background-color: var(--accent); transition: width .5s ease-out; border-radius: 9999px; }
+  .progress-glow { background: var(--accent-glow); filter: blur(12px); opacity: .6; transition: width .5s ease-out; border-radius: 9999px; }
+
+  .gradient-text {
+    --bg-size: 400%;
+    --color-one: #4E54C8;
+    --color-two: #8F94FB;
+    background: linear-gradient(90deg, var(--color-one), var(--color-two), var(--color-one)) 0 0 / var(--bg-size) 100%;
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .gradient-text { animation: move 6s linear infinite; }
+    @keyframes move { to { background-position: var(--bg-size) 0; } }
+  }
+}
