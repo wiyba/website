@@ -3,6 +3,10 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/tailwindcss', '@nuxt/icon', '@nuxtjs/google-fonts', '@nuxtjs/i18n'],
   css: ['@/assets/css/main.css', '@/assets/css/fonts.css'],
+  app: {
+    pageTransition: { name: 'fade', mode: 'out-in' },
+    layoutTransition: { name: 'slide', mode: 'out-in' }
+  },
   googleFonts: {
     families: {
       Raleway: [400, 500, 600, 700, 800],
@@ -17,18 +21,18 @@ export default defineNuxtConfig({
       { code: 'en', iso: 'en-US', name: 'English', file: 'en.json' }
     ],
     defaultLocale: 'ru',
-    strategy: 'prefix_except_default',
+    strategy: 'no_prefix',
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: 'i18n_redirected',
-      redirectOn: 'root',
+      redirectOn: 'no prefix',
       alwaysRedirect: false,
       fallbackLocale: 'ru'
     },
   },
   runtimeConfig: {
     public: {
-      apiBase: "/api"
+      apiBase: process.env.NUXT_PUBLIC_API_BASE
     }
   },
 })

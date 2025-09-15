@@ -71,7 +71,7 @@ const { t } = useI18n()
     </div>
 
     <div class="flex w-full">
-      <NuxtLink to="/skills" class="tile">
+      <NuxtLink to="/newtab" class="tile">
         <div class="grid sm:flex gap-3 items-center">
           <Icon name="ci:text-align-left" class="text-neutral-400 dark:text-black icon" />
           <p class="font-semibold text-neutral-200 dark:text-black font-raleway">{{ t('skills.allSkills') }}</p>

@@ -34,7 +34,7 @@ WEATHER_CACHE_FILE  = STORAGE_DIR / "weather.json"
 # ---------------- env ----------------
 load_dotenv(dotenv_path=Path(__file__).with_name(".env"), override=True)
 
-SPOTIFY_POLL_INTERVAL = float(os.getenv("SPOTIFY_POLL_INTERVAL", "1.0"))
+SPOTIFY_POLL_INTERVAL = float(os.getenv("SPOTIFY_POLL_INTERVAL", "10.0"))
 
 SPOTIFY_CLIENT_ID     = os.getenv("SPOTIFY_CLIENT_ID") or ""
 SPOTIFY_CLIENT_SECRET = os.getenv("SPOTIFY_CLIENT_SECRET") or ""

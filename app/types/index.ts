@@ -21,3 +21,18 @@ export interface WeatherResponse {
   temp: number | null
   d: string | null
 }
+
+export type SearchConfig = {
+  commandPathDelimiter: string
+  commandSearchDelimiter: string
+  defaultSearchTemplate: string
+  openLinksInNewTab: boolean
+  suggestionLimit: number
+}
+
+export type CommandEntry = {
+  name?: string
+  url?: string
+  searchTemplate?: string
+  suggestions?: string[]
+}
