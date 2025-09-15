@@ -32,20 +32,57 @@ SPOTIFY_CACHE_FILE  = STORAGE_DIR / "currently_playing.json"
 WEATHER_CACHE_FILE  = STORAGE_DIR / "weather.json"
 
 # ---------------- env ----------------
+def create_env_if_not_exists():
+    env_path = Path(__file__).with_name(".env")
+    example_path = Path(__file__).with_name(".env.example")
+    
+    if not env_path.exists() and example_path.exists():
+        print(f".env file not found. Creating from .env.example...")
+        try:
+            with open(example_path, "r", encoding="utf-8") as example_file:
+                content = example_file.read()
+            
+            with open(env_path, "w", encoding="utf-8") as env_file:
+                env_file.write(content)
+                
+            print(f"Created .env file. Please edit it with your actual credentials.")
+            exit
+        except Exception as e:
+            print(f"Failed to create .env file: {str(e)}")
+            exit
+
+def validate_env_vars():
+    warnings = []
+    if not OWM_KEY:
+        warnings.append("OPENWEATHER_API_KEY is not set - weather features will not work")
+    if not OWM_LAT or not OWM_LON:
+        warnings.append("OPENWEATHER_LAT/LON not set - using default Moscow coordinates")
+    if not SPOTIFY_CLIENT_ID or not SPOTIFY_CLIENT_SECRET:
+        warnings.append("Spotify credentials not set - music features will not work")
+    if warnings:
+        print("\nEnvironment configuration warnings:")
+        for warning in warnings:
+            print(warning)
+        print(f"\nEdit backend/.env to configure these values\n")
+
+create_env_if_not_exists()
+validate_env_vars()
+
 load_dotenv(dotenv_path=Path(__file__).with_name(".env"), override=True)
 
-SPOTIFY_POLL_INTERVAL = float(os.getenv("SPOTIFY_POLL_INTERVAL", "10.0"))
+# Default values for environment variables
+SPOTIFY_POLL_INTERVAL = float(os.getenv("SPOTIFY_POLL_INTERVAL") or "")
 
 SPOTIFY_CLIENT_ID     = os.getenv("SPOTIFY_CLIENT_ID") or ""
 SPOTIFY_CLIENT_SECRET = os.getenv("SPOTIFY_CLIENT_SECRET") or ""
 SPOTIFY_REFRESH_TOKEN = os.getenv("SPOTIFY_REFRESH_TOKEN") or ""
 
-OWM_KEY   = os.getenv("OPENWEATHER_API_KEY", "e434b5435a979de6e155570590bee89b")
-OWM_LAT   = os.getenv("OPENWEATHER_LAT", "55.778")
-OWM_LON   = os.getenv("OPENWEATHER_LON", "37.474")
-OWM_UNITS = os.getenv("OPENWEATHER_UNITS", "metric")
-OWM_LANG  = os.getenv("OPENWEATHER_LANG", "ru")
-WEATHER_POLL_INTERVAL = int(os.getenv("WEATHER_POLL_INTERVAL", "600"))
+OWM_KEY   = os.getenv("OPENWEATHER_API_KEY") or ""
+OWM_LAT   = os.getenv("OPENWEATHER_LAT") or ""
+OWM_LON   = os.getenv("OPENWEATHER_LON") or ""
+OWM_UNITS = os.getenv("OPENWEATHER_UNITS") or ""
+OWM_LANG  = os.getenv("OPENWEATHER_LANG") or ""
+WEATHER_POLL_INTERVAL = int(os.getenv("WEATHER_POLL_INTERVAL") or "")
 
 # ---------------- models ----------------
 class TokenStorage(BaseModel):
