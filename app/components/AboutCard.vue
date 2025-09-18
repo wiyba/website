@@ -55,15 +55,10 @@ function toggleLang() {
         <p class="font-medium">{{ t('about.contact') }}</p>
       </a>
 
-      <!-- Вариант 1: локальный тоггл языка -->
       <button class="btn" @click="toggleLang">
         <Icon name="heroicons:language-20-solid" size="22" class="text-neutral-400 dark:text-black align-sub" />
         <p class="font-medium pl-0">{{ t('about.switchLang') }}</p>
       </button>
-
-      <!-- Вариант 2: готовый свитчер ссылками
-      <LanguageSwitcher />
-      -->
     </div>
   </div>
 </template>
