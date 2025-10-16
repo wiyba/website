@@ -35,7 +35,7 @@ export function useSearchConfig() {
     ['t/5opka', { url: 'https://twitch.tv/5opka' }],
 
     // ai
-    ['a', { name: 'ai', searchTemplate: '/search/new?q={}', suggestions: ['a/perplexity', 'a/chatgpt', 'a/grok', 'a/copilot'], url: 'https://www.perplexity.ai' }],
+    ['a', { name: 'ai', searchTemplate: '/new?q={}', suggestions: ['a/claude', 'a/perplexity', 'a/chatgpt', 'a/grok', 'a/copilot'], url: 'https://claude.ai' }],
     ['a/claude', { searchTemplate: '/new?q={}', url: 'https://claude.ai' }],
     ['a/perplexity', { searchTemplate: '/search/new?q={}', url: 'https://www.perplexity.ai' }],
     ['a/chatgpt', { searchTemplate: '/?temporary-chat=true&q={}', url: 'https://chatgpt.com/?temporary-chat=true' }],
