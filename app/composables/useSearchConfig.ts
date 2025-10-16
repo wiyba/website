@@ -36,8 +36,9 @@ export function useSearchConfig() {
 
     // ai
     ['a', { name: 'ai', searchTemplate: '/search/new?q={}', suggestions: ['a/perplexity', 'a/chatgpt', 'a/grok', 'a/copilot'], url: 'https://www.perplexity.ai' }],
-    ['a/chatgpt', { searchTemplate: '/?temporary-chat=true&q={}', url: 'https://chatgpt.com/?temporary-chat=true' }],
+    ['a/claude', { searchTemplate: '/new?q={}', url: 'https://claude.ai' }],
     ['a/perplexity', { searchTemplate: '/search/new?q={}', url: 'https://www.perplexity.ai' }],
+    ['a/chatgpt', { searchTemplate: '/?temporary-chat=true&q={}', url: 'https://chatgpt.com/?temporary-chat=true' }],
     ['a/grok', { searchTemplate: '/?q={}', url: 'https://grok.com' }],
     ['a/copilot', { url: 'https://github.com/copilot' }],
 
