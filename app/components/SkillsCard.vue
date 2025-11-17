@@ -33,8 +33,8 @@ const { t } = useI18n()
 
       <div class="skill-card">
         <div class="flex gap-3 items-center">
-          <Icon name="uim:vuejs" class="icon" />
-          <p>Vue</p>
+          <Icon name="mdi:nix" class="icon" />
+          <p>Nix</p>
         </div>
         <div class="flex gap-4 items-center relative">
           <svg height="14" width="14" xmlns="http://www.w3.org/2000/svg" class="text-teal-500" fill="currentColor">
@@ -49,8 +49,8 @@ const { t } = useI18n()
 
       <div class="skill-card">
         <div class="flex gap-3 items-center">
-          <Icon name="hugeicons:java" class="icon" />
-          <p>Java</p>
+          <Icon name="uim:vuejs" class="icon" />
+          <p>Vue</p>
         </div>
         <div class="flex gap-4 items-center relative">
           <svg height="14" width="14" xmlns="http://www.w3.org/2000/svg" class="text-teal-500" fill="currentColor">

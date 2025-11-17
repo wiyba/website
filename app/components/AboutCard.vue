@@ -34,8 +34,8 @@ function toggleLang() {
 
         <div class="hidden md:flex flex-wrap gap-4">
           <div class="chip text-neutral-200 font-raleway"><p><Icon name="mdi:language-python" size="13" class="icon mr-1 mb-1" /> Python</p></div>
+          <div class="chip text-neutral-200 font-raleway"><p><Icon name="mdi:nix" size="13" class="icon mr-1" /> Nix</p></div>
           <div class="chip text-neutral-200 font-raleway"><p><Icon name="uim:vuejs" size="13" class="icon mr-1 mb-0.5" /> Vue</p></div>
-          <div class="chip text-neutral-200 font-raleway"><p><Icon name="lineicons:nuxt" size="13" class="icon mr-1" /> Nuxt</p></div>
           <div class="chip text-neutral-200 font-raleway"><p><Icon name="mdi:tailwind" size="13" class="icon mr-1" /> Tailwind</p></div>
         </div>
       </div>
